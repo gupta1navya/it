@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Tables</title>
+    <!-- <script src="./Q4.js"></script> -->
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var i = 2;
+
+        function displayNextTable() {
+            var div = document.createElement("div");
+            var br = document.createElement("br");
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            if (i < 11) {
+                for (let j = 1; j < 11; j++) {
+                    div.innerHTML += "\t" + i * j;
+                }
+                i++
+                div.style.marginTop=3+"px"
+                div.style.textAlign = "center";
+                div.style.fontSize = 5 * i + "px";
+                div.style.color = "#" + randomColor;
+                document.getElementById("container").appendChild(div);
+                document.getElementById("container").appendChild(br);
+            }else {
+                clearInterval(interval);
+            }
+        }
+
+        var interval = document.addEventListener("DOMContentLoaded", () => {
+            setInterval(displayNextTable, 5000);
+        })
+    </script>
+    
+</body>
+</html>

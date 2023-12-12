@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc.(Hons.) Computer Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            font-style:italic;
+        }
+        #courseDetails{
+            max-width: 600px;
+            margin: 30px;
+        }
+        button{
+            background-color: rgb(233, 143, 26);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+            color: #333
+        } 
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="courseDetails">
+        <h1>B.Sc.(Hons.) Computer Science</h1>
+    
+        <h2>Course Details</h2>
+        <p><strong>Fee:</strong> 40000-Rs. per year</p>
+        <p><strong>Eligibility Criteria:</strong> 10+2 with Science stream</p>
+
+        <h2>Course Structure</h2>
+        <ol type="1">
+            <li><strong>Data Structures and Algorithms</strong> - 6 credits</li>
+            <li><strong>Database Management System</strong> - 4 credits</li>
+            <li><strong>Information Technologies</strong> - 6 credits</li>
+            <li><strong>Software Engineering</strong> - 4 credits</li>
+            <li><strong>Microprocessor 8086</strong> - 6 credits</li>
+            <li><strong>Graphics Designing</strong> - 4 credits</li>
+
+        </ol>
+        <ul type="A">
+            <li><strong>Computer System Architecture</strong> - 4 credits</li>
+            <li><strong>Programming with C++ </strong> - 6 credits</li>
+            <li><strong>Advanced Algorithms</strong> - 6 credits</li>
+            <li><strong>Web Development</strong> - 6 credits</li>
+
+        </ul>
+
+        <h2>Future Possibilities</h2>
+        <p>Graduates can pursue careers in software development, data analysis, cybersecurity, and more.</p>
+    </div>
+    <button id="styleButton">Style Page</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script >
+        $(document).ready(function() {
+            $('#styleButton').click(function() {
+                // Redesign the complete page using jQuery
+                $('body').css({
+                'font-style':'normal',
+                'background-color': '#f2f2f2',
+                'text-align': 'center',
+            });
+      
+            $('#courseDetails').css({
+                'margin' : 'auto',
+                'background-color': '#fff',
+                'padding': '20px',
+                'border': '1px solid #ccc',
+                'border-radius': '8px',
+                'box-shadow': '0 0 10px rgba(0, 0, 0, 0.1)',
+            });
+      
+            $('h1, h2, p, ul, li').css({
+                'color': '#333',
+            });
+      
+            $('button').css({
+                'background-color': '#4CAF50',
+                'color': 'white',
+            });
+        });
+      });
+    </script>
+</body>
+</html>

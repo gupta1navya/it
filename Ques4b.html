@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <main id="box">
+        <div> </div>
+        <script>
+            let table = 2;
+            let fontS = 10;
+
+            let r = 100;
+            let g = 10;
+            let b = 10;
+
+            function getTable(i) {
+                let data = `${table} X ${i} = ` + table * i;
+                return data;
+            }
+
+            let x = document.getElementById("box");
+
+            function myFunc(){
+                let bigElm = document.createElement("div");
+
+                bigElm.style.fontSize = `${fontS}px`;
+                bigElm.style.color = `rgb(${r},${g},${b})`;
+
+                r = Math.floor(Math.random() * 255 + 1);
+                g = Math.floor(Math.random() * 255 + 1);
+                b = Math.floor(Math.random() * 255 + 1);
+
+                fontS += 5;
+                for (let i = 1; i <= 10; i++) {
+                    let elm = document.createElement("p");
+                    elm.innerText = getTable(i);
+                    bigElm.appendChild(elm);
+                }
+                x.appendChild(bigElm);
+            }
+
+            let intervalId = setInterval(() => {
+                myFunc();
+                table++;
+                (table === 11) && clearInterval(intervalId);
+            }, 2 * 1000)
+        </script>
+    </main>
+</body>
+</html>

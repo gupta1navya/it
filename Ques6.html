@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishabh Kumar</title>
+    <!-- <script src="./Ques6.js"></script> -->
+    <style>
+        form{
+            margin: 20px;
+        }
+        legend{
+            margin: 20px;
+        }
+        button{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+    <form action="">
+    <fieldset>
+        <legend>Pet Details</legend>
+        
+        <label for="name">Pet Name: </label>
+        <input type="text" id="name" name="">
+        <br><br>
+
+        <label for="age">Age: </label>
+        <input type="text" id="age" name="">
+        <br><br>
+
+        <label for="weight">Weight: </label>
+        <input type="number" id="weight" name="">
+        <br><br>
+
+        <label for="type" >Pet Type: </label>
+        <select name="" id="type">
+            <option value="">Pit Bull</option>
+            <option value="">Boxer</option>
+            <option value="">French Buldog</option>
+            <option value="">German Shepherd</option>
+        </select>
+        <br><br>
+
+        <label for="like">Like most</label>
+        <input type="text" name="" id="like">
+        <br><br>
+
+        <button type="submit" id="btn">SUBMIT</button>
+
+    </fieldset>
+    </form>
+
+    <script>
+        let name="";
+        let age=0;
+        let weight=0;
+        let pettype="";
+        let like="";
+
+        document.getElementById("btn").addEventListener("click", (e)=>{
+            e.preventDefault();
+            name= document.getElementById("name").value;
+            age= document.getElementById("age").value;
+            weight= document.getElementById("weight").value;
+            index= document.getElementById("type").options.selectedIndex;
+            pettype= document.getElementById("type").options[index].text;
+            like= document.getElementById("like").value;
+
+
+            if((name==="") || (age===0) || (weight===0) || (like==="") || (pettype==="")){
+                alert("Please Fill Form Corrctly.")
+            }
+            else{
+                console.log(JSON.stringify({
+                    name, age, weight, pettype, like
+                }));
+                document.getElementById("name").value= "";
+                document.getElementById("age").value= "";
+                document.getElementById("weight").value= "";
+                document.getElementById("like").value= "";
+            }
+
+        })
+
+    </script>
+</body>
+</html>
